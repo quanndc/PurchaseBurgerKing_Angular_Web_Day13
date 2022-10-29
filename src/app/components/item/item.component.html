@@ -1,0 +1,26 @@
+<div class="product-inner">
+    <a href="#" class="product-img add-cart btn-bundle" data-id="1202"> <img id="product-collection-image-1202"
+            [src]="item.photoURL" alt="BURGER THAN TRE (CỠ LỚN)">
+    </a> <input type="hidden" id="city_remote" name="city_remote" value="">
+    <h4 class="product-title">
+        <a href="#">{{item.name}}</a>
+    </h4>
+    <div class="product-bottom">
+        <h3 class="product-price">{{item.price | number}}&nbsp;VND</h3>
+        <h1 class="stock"> Stock {{item.stock}}</h1>
+        <h1 class="quantity"> Quantity {{item.quantity}}</h1>
+        <div class="product-action ">
+            <button *ngIf="!(item.stock == 0)" (click)="this.incre()" type="button" title="Đặt mua" class="add-cart btn-bundle">
+                <span ><span>Thêm</span></span>
+            </button>
+            <button *ngIf="!(item.stock == 0)" (click)="this.decre()" type="button" title="Đặt mua" class="add-cart btn-bundle">
+                <span><span>Xóa</span></span>
+            </button>
+        </div>
+        <div class="product-action ">
+            <button (click)="this.purchase()" type="button" title="Đặt mua" class="add-cart btn-bundle">
+                <span><span>Thanh toán</span></span>
+            </button>
+        </div>
+    </div>
+</div>
